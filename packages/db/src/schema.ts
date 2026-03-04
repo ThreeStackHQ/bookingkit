@@ -104,7 +104,8 @@ export const bookings = pgTable("bookings", {
   startsAt: timestamp("starts_at", { withTimezone: true }).notNull(),
   endsAt: timestamp("ends_at", { withTimezone: true }).notNull(),
   status: bookingStatusEnum("status").notNull().default("confirmed"),
-  cancelToken: uuid("cancel_token").defaultRandom().notNull(),
+  // SEC-013: cancelToken is nullable — set to NULL after use (single-use enforcement)
+  cancelToken: uuid("cancel_token").defaultRandom(),
   rescheduleToken: uuid("reschedule_token").defaultRandom().notNull(),
   stripePaymentIntent: text("stripe_payment_intent"),
   notes: text("notes"),

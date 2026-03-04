@@ -1,6 +1,6 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
-import * as schema from "./schema.js";
+import * as schema from "./schema";
 
 export function createDb(connectionString: string) {
   const client = postgres(connectionString);
@@ -9,4 +9,4 @@ export function createDb(connectionString: string) {
 
 export type Database = ReturnType<typeof createDb>;
 
-export * from "./schema.js";
+export * from "./schema";

@@ -12,6 +12,7 @@
     "@bookingkit/db": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.38.0",
     "lucide-react": "^0.468.0",
     "next": "14.2.21",
     "react": "^18.3.1",
